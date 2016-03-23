@@ -8,10 +8,8 @@ public class Rectangle {
 	
 	/** The p2. */
 	private Point p1, p2;
-	
-	private double xAxis;
-	private double yAxis;
-
+	double xAxis = Math.abs(p2.x - p1.x);
+	double yAxis = Math.abs(p2.y - p1.y);
 	
 	/**
 	 * Instantiates a new rectangle.
@@ -22,9 +20,6 @@ public class Rectangle {
 	Rectangle(Point p1, Point p2) {
 		this.p1 = p1;
 		this.p2 = p2;
-		
-		xAxis = Math.abs(p2.x - p1.x);
-		yAxis = Math.abs(p2.y - p1.y);
 	}
 	
 	/**
