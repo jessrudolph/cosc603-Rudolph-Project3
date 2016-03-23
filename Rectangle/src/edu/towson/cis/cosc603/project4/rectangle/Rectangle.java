@@ -15,7 +15,7 @@ public class Rectangle {
 	 * @param p1 the p1
 	 * @param p2 the p2
 	 */
-	Rectangle(Point p1, Point p2) {
+	Rectangle(Point p1, Point p2) {	
 		this.p1 = p1;
 		this.p2 = p2;
 	}
@@ -26,7 +26,9 @@ public class Rectangle {
 	 * @return the area
 	 */
 	public Double getArea() {
-		return Math.abs((p2.x - p1.x) * (p2.y - p1.y));
+		double xAxis = Math.abs(p2.x - p1.x);
+		double yAxis = Math.abs(p2.y - p1.y);
+		return xAxis * yAxis;
 	}
 	
 	/**
