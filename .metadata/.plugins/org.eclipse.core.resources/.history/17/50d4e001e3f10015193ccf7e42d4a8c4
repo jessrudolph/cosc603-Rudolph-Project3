@@ -28,13 +28,14 @@ public class VendingMachineTest {
 	/**
 	 * Initializes the test objects for the test cases.
 	 * 
-	 * Fills the vending machine such that slots with code A, B, & C are occupied.
-	 * 
 	 * @throws Exception the exception
 	 */
 	@Before
 		public void setUp() throws Exception {
 				
+		/**
+		 * These objects 
+		 */
 		doritos = new VendingMachineItem("Doritos", 1.75);
 		utz = new VendingMachineItem("Utz", 1.50);
 		skittles = new VendingMachineItem("Skittles", 1.85);
@@ -46,12 +47,17 @@ public class VendingMachineTest {
 		snacksVendingMachine.addItem(utz, "B");
 		snacksVendingMachine.addItem(skittles, "C");
 		}
+
+	/**
+	 * 
+	 */
+	public void testVendingMachine(){
+		assertNotNull(snacksVendingMachine);
+	}
 	
 	
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem, java.lang.String)}.
-	 * 
-	 * Adds item to slot with code labeled "D", since that is the last empty slot to be filled.
 	 */
 	@Test
 	public void testAddItem() {
@@ -61,7 +67,6 @@ public class VendingMachineTest {
 
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#removeItem(java.lang.String)}.
-	 * 
 	 */
 	@Test
 	public void testRemoveItem() {

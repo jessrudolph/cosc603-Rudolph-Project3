@@ -61,7 +61,6 @@ public class VendingMachineTest {
 
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#removeItem(java.lang.String)}.
-	 * 
 	 */
 	@Test
 	public void testRemoveItem() {
