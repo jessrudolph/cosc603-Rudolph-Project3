@@ -37,7 +37,8 @@ public class VendingMachineItemTest {
 	
 	public void testNegativePrice() {
 		negativePrice = new VendingMachineItem("negativePrice", -1.09);
-		assertEquals(-1.09, negativePrice.getPrice(), 0.00);
+		assertEquals("-1.09", negativePrice.getPrice());
+
 		assertNull(negativePrice);
 	}
 	
@@ -82,10 +83,6 @@ public class VendingMachineItemTest {
 	@After
 	public void tearDown() throws Exception {
 		doritos = null;
-		zeroDollars = null;
-		lessThanZeroDollars = null;
-		negativePrice = null;
-		nullName = null;
 	}
 
 }

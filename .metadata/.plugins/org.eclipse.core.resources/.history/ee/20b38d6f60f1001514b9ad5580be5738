@@ -82,10 +82,6 @@ public class VendingMachineItemTest {
 	@After
 	public void tearDown() throws Exception {
 		doritos = null;
-		zeroDollars = null;
-		lessThanZeroDollars = null;
-		negativePrice = null;
-		nullName = null;
 	}
 
 }

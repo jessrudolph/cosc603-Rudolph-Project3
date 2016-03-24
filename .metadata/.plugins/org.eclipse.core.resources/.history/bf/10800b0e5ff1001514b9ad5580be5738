@@ -37,8 +37,12 @@ public class VendingMachineItemTest {
 	
 	public void testNegativePrice() {
 		negativePrice = new VendingMachineItem("negativePrice", -1.09);
-		assertEquals(-1.09, negativePrice.getPrice(), 0.00);
 		assertNull(negativePrice);
+	}
+	
+	public void testNullName() {
+		nullName = new VendingMachineItem(null, 1.00);
+		assertNull(nullName);
 	}
 	
 	/**
@@ -55,24 +59,22 @@ public class VendingMachineItemTest {
 	@Test
 	public void testGetName() {
 		assertEquals("Doritos", doritos.getName());
-	}
-	
-	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem#getName()}.
-	 */
-	@Test
-	public void testNullName() {
-		nullName = new VendingMachineItem(null, 1.00);
+		assertEquals("zeroDollars", zeroDollars.getName());
+		assertEquals("lessThanZeroDollars", lessThanZeroDollars.getName());
+		assertEquals("negativePrice", negativePrice.getName());
 		assertEquals(null, nullName.getName());
 	}
-
 
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem#getPrice()}.
 	 */
 	@Test
 	public void testGetPrice() {
-		assertEquals(1.75, doritos.getPrice(), 0.00);
+		assertEquals("1.75", doritos.getPrice());
+		assertEquals("0.00", zeroDollars.getPrice());
+		assertEquals(".001", lessThanZeroDollars.getPrice());
+		assertEquals("-1.09", negativePrice.getPrice());
+		assertEquals(null, nullName.getPrice());
 	}
 
 	/**
@@ -82,10 +84,6 @@ public class VendingMachineItemTest {
 	@After
 	public void tearDown() throws Exception {
 		doritos = null;
-		zeroDollars = null;
-		lessThanZeroDollars = null;
-		negativePrice = null;
-		nullName = null;
 	}
 
 }
