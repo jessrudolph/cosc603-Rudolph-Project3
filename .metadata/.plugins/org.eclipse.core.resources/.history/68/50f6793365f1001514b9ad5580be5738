@@ -15,28 +15,22 @@ import org.junit.Test;
  */
 public class VendingMachineTest {
 	
-	VendingMachine snacksVendingMachine;
+	VendingMachine myVendingMachineForSnacks;
 	
 	VendingMachineItem doritos, utz, skittles, popcorn;
 	
+	String[] identifyingCode = {"A", "B", "C", "D"};
+
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 		public void setUp() throws Exception {
-				
+		myVendingMachineForSnacks = new VendingMachine();
 		doritos = new VendingMachineItem("Doritos", 1.75);
 		utz = new VendingMachineItem("Utz", 1.50);
 		skittles = new VendingMachineItem("Skittles", 1.85);
 		popcorn = new VendingMachineItem("Buttery Popcorn", 2.00);
-		
-		snacksVendingMachine = new VendingMachine();
-		
-		snacksVendingMachine.addItem(doritos, "A");
-		snacksVendingMachine.addItem(utz, "B");
-		snacksVendingMachine.addItem(skittles, "C");
-		snacksVendingMachine.addItem(popcorn, "D");
-		
 		}
 
 
@@ -94,11 +88,6 @@ public class VendingMachineTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		snacksVendingMachine = null;
-		doritos = null; 
-		utz = null;
-		skittles = null;
-		popcorn = null;
 	}
 
 }
