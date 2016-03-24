@@ -65,8 +65,8 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testInsertMoney() {
-		snacksVendingMachine.insertMoney(1.85);
-		assertEquals(1.85, snacksVendingMachine.balance, 0.00);
+		snacksVendingMachine.insertMoney(2.00);
+		assertTrue(snacksVendingMachine.getBalance() >= 0);
 	}
 
 	/**
@@ -74,8 +74,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetBalance() {
-		snacksVendingMachine.getBalance();
-		assertTrue(snacksVendingMachine.getBalance() >= 0);
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -83,10 +82,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchase() {
-		snacksVendingMachine.makePurchase("C");
-		snacksVendingMachine.getItem("C");
-		assertNotNull(snacksVendingMachine.getItem("C"));
-		assertSame(skittles, snacksVendingMachine.getItem("C"));
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -94,7 +90,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testReturnChange() {
-		assertEquals(0.00, snacksVendingMachine.getBalance(), 0.00);
+		fail("Not yet implemented");
 	}
 	
 	/**

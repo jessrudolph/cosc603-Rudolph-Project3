@@ -35,6 +35,7 @@ public class VendingMachineTest {
 		snacksVendingMachine.addItem(doritos, "A");
 		snacksVendingMachine.addItem(utz, "B");
 		snacksVendingMachine.addItem(skittles, "C");
+		snacksVendingMachine.addItem(popcorn, "D");
 		}
 
 	
@@ -43,13 +44,13 @@ public class VendingMachineTest {
 	}
 	
 	
+	
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem, java.lang.String)}.
 	 */
 	@Test
 	public void testAddItem() {
-		snacksVendingMachine.addItem(popcorn, "D");
-		assertSame(popcorn, snacksVendingMachine.getItem("D"));
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testRemoveItem() {
-		assertSame(utz, snacksVendingMachine.removeItem("B"));
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -65,8 +66,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testInsertMoney() {
-		snacksVendingMachine.insertMoney(1.85);
-		assertEquals(1.85, snacksVendingMachine.balance, 0.00);
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -74,8 +74,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testGetBalance() {
-		snacksVendingMachine.getBalance();
-		assertTrue(snacksVendingMachine.getBalance() >= 0);
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -83,10 +82,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testMakePurchase() {
-		snacksVendingMachine.makePurchase("C");
-		snacksVendingMachine.getItem("C");
-		assertNotNull(snacksVendingMachine.getItem("C"));
-		assertSame(skittles, snacksVendingMachine.getItem("C"));
+		fail("Not yet implemented");
 	}
 
 	/**
@@ -94,7 +90,7 @@ public class VendingMachineTest {
 	 */
 	@Test
 	public void testReturnChange() {
-		assertEquals(0.00, snacksVendingMachine.getBalance(), 0.00);
+		fail("Not yet implemented");
 	}
 	
 	/**
