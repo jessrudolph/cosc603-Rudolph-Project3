@@ -10,27 +10,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author Jess Rudolph
+ * @author Owner
  *
  */
 public class VendingMachineTest {
 	
-	VendingMachine myVendingMachineForSnacks;
-	
-	VendingMachineItem doritos, utz, skittles, popcorn;
-	
-	String[] identifyingCode = {"A", "B", "C", "D"};
+	VendingMachine myVendingMachine1;
+
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 		public void setUp() throws Exception {
-		myVendingMachineForSnacks = new VendingMachine();
-		doritos = new VendingMachineItem("Doritos", 1.75);
-		utz = new VendingMachineItem("Utz", 1.50);
-		skittles = new VendingMachineItem("Skittles", 1.85);
-		popcorn = new VendingMachineItem("Buttery Popcorn", 2.00);
+			myVendingMachine1 = new VendingMachine();
 		}
 
 

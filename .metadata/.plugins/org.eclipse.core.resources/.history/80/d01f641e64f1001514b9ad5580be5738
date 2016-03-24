@@ -27,10 +27,6 @@ public class VendingMachineTest {
 	@Before
 		public void setUp() throws Exception {
 		myVendingMachineForSnacks = new VendingMachine();
-		doritos = new VendingMachineItem("Doritos", 1.75);
-		utz = new VendingMachineItem("Utz", 1.50);
-		skittles = new VendingMachineItem("Skittles", 1.85);
-		popcorn = new VendingMachineItem("Buttery Popcorn", 2.00);
 		}
 
 
