@@ -246,21 +246,6 @@ public class VendingMachineTest {
 		}
 	
 	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#returnChange()}.
-	 * 
-	 * Tests the correct change is given after purchase.
-	 * Verifies the balance is set to 0.
-	 */
-	@Test
-	public void testReturnChangeWithoutPurchase() {
-		snacksVendingMachine.insertMoney(1.00);
-		snacksVendingMachine.insertMoney(1.00);		
-		assertEquals(2.00, snacksVendingMachine.returnChange(), 0.00);
-		assertEquals(0.00, snacksVendingMachine.getBalance(), 0.00);
-		}
-	
-	
-	/**
 	 * @throws java.lang.Exception
 	 */
 	@After

@@ -64,7 +64,9 @@ public class VendingMachineTest {
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem, java.lang.String)}.
 	 * 
-	 *Test will prevent item from being added to a slot that is already occupied by an item.
+	 * Adds item to slot with code labeled "D", since that is the last empty slot to be filled.
+	 * 
+	 * Test checks that the item was added to the correct slot.
 	 */
 	@Test(expected=VendingMachineException.class)
 	public void testAddItemAlreadyOccupied() {
@@ -74,8 +76,9 @@ public class VendingMachineTest {
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc603.project4.vendingmachine.VendingMachineItem, java.lang.String)}.
 	 * 
-	 * Test will through an Exception for trying to add an item to a slot with an invalid code.
+	 * Adds item to slot with code labeled "D", since that is the last empty slot to be filled.
 	 * 
+	 * Test checks that the item was added to the correct slot.
 	 */
 	@Test(expected=VendingMachineException.class)
 	public void testAddItemSlotNotExist() {
@@ -95,17 +98,6 @@ public class VendingMachineTest {
 	}
 
 	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#removeItem(java.lang.String)}.
-	 * 
-	 * Test will verify that Exception is thrown because a null item cannot be removed.
-	 * 
-	 */
-	@Test(expected=VendingMachineException.class)
-	public void testRemoveItemNull() {
-		snacksVendingMachine.removeItem("D");
-	}
-	
-	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#insertMoney(double)}.
 	 * 
 	 * Tests that the amount of money inserted matches the balance.
@@ -119,7 +111,7 @@ public class VendingMachineTest {
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#insertMoney(double)}.
 	 * 
-	 * Tests throws and exception because the amount of money entered is a negative number.
+	 * Tests that the amount of money inserted matches the balance.
 	 */
 	@Test(expected=VendingMachineException.class)
 	public void testInsertMoneyNegative() {
@@ -153,30 +145,13 @@ public class VendingMachineTest {
 		snacksVendingMachine.insertMoney(1.00);
 		assertEquals(1.00, snacksVendingMachine.getBalance(), 0.0);		
 	}
-	
-	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#getBalance()}.
-	 * 
-	 * First verifies that the beginning balance is 0.
-	 * 
-	 * Tests that the balance is the amount of change due.
-	 *
-	 */
-	@Test
-	public void testGetBalanceOfChangeDue() {
-		assertEquals(0, snacksVendingMachine.getBalance(), 0);
-		
-		snacksVendingMachine.insertMoney(1.00);
-		snacksVendingMachine.insertMoney(1.00);		
-		snacksVendingMachine.makePurchase("B");	
-		assertEquals(.50, snacksVendingMachine.getBalance(), 0.00);
-	}
 
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
 	 * 
 	 * User inserts money and makes a purchase.
 	 */
+	
 	@Test
 	public void testMakePurchase() {
 		snacksVendingMachine.insertMoney(1.00);
@@ -189,6 +164,7 @@ public class VendingMachineTest {
 	 * 
 	 * User tries to purchase an item code that has no product (aka it is null).
 	 */
+	
 	@Test
 	public void testMakePurchaseNull() {
 		snacksVendingMachine.removeItem("B");
@@ -196,29 +172,6 @@ public class VendingMachineTest {
 		snacksVendingMachine.insertMoney(1.00);		
 		assertFalse(snacksVendingMachine.makePurchase("B"));	
 	}
-	
-	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
-	 * 
-	 * There isn't enough money to purchase the item.
-	 */
-	@Test
-	public void testMakePurchaseNotEnoughMoney() {
-		snacksVendingMachine.insertMoney(1.00);	
-		snacksVendingMachine.insertMoney(.25);		
-		assertFalse(snacksVendingMachine.makePurchase("A"));	
-	}
-	
-	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
-	 * 
-	 * Test to see false is returned when user tries to purchase an item without inserting money.
-	 */
-	@Test
-	public void testMakePurchaseNoMoney() {	
-		assertFalse(snacksVendingMachine.makePurchase("B"));	
-	}
-	
 
 	/**
 	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#returnChange()}.
@@ -244,21 +197,6 @@ public class VendingMachineTest {
 		assertEquals(.50, snacksVendingMachine.returnChange(), 0.00);
 		assertEquals(0.00, snacksVendingMachine.getBalance(), 0.00);
 		}
-	
-	/**
-	 * Test method for {@link edu.towson.cis.cosc603.project4.vendingmachine.VendingMachine#returnChange()}.
-	 * 
-	 * Tests the correct change is given after purchase.
-	 * Verifies the balance is set to 0.
-	 */
-	@Test
-	public void testReturnChangeWithoutPurchase() {
-		snacksVendingMachine.insertMoney(1.00);
-		snacksVendingMachine.insertMoney(1.00);		
-		assertEquals(2.00, snacksVendingMachine.returnChange(), 0.00);
-		assertEquals(0.00, snacksVendingMachine.getBalance(), 0.00);
-		}
-	
 	
 	/**
 	 * @throws java.lang.Exception
